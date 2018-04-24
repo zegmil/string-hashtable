@@ -45,6 +45,7 @@ int main() {
 	for (int t = 0; t < LOOKUPS_NUMBER; t++) {
 		String *randomString = generateRandomString();
 		hashTable.exists(*randomString);
+		delete randomString;
 	}
 	clock_t hashLookupFinish = clock();
 
@@ -52,6 +53,7 @@ int main() {
 	for (int t = 0; t < LOOKUPS_NUMBER; t++) {
 		String *randomString = generateRandomString();
 		arrayLookUp(stringTable, *randomString);
+		delete randomString;
 	}
 	clock_t arrayLookupFinish = clock();
 
